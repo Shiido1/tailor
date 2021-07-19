@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:tailor_app/complete_tailor_verification/complete_tailor_screen.dart';
-import 'package:tailor_app/dashboard/client_dashboard_screen.dart';
-import 'package:tailor_app/dashboard/tailor_dashboard_screen.dart';
-import 'package:tailor_app/sign_in_screen/sign_in.dart';
-import 'package:tailor_app/sign_up_screen/sing_up_screen.dart';
-import 'package:tailor_app/tailor_category/tailor_category_screen.dart';
+import 'package:sizary/complete_tailor_verification/complete_tailor_screen.dart';
+import 'package:sizary/dashboard/client_dashboard_screen.dart';
+import 'package:sizary/dashboard/tailor_dashboard_screen.dart';
+import 'package:sizary/sign_in_screen/sign_in.dart';
+import 'package:sizary/sign_up_screen/sing_up_screen.dart';
+import 'package:sizary/tailor_category/tailor_category_screen.dart';
 
 BuildContext globalContext;
 bool hasOpenedLogOutDialog = false;

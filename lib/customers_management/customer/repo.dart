@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tailor_app/error_handler/handler.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
+import 'package:sizary/error_handler/handler.dart';
+import 'package:sizary/instance_helper/instances.dart';
 
 import 'model.dart';
 

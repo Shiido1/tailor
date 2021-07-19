@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
    <application
-        android:label="tailor_app"
+        android:label="Sizary"
         android:icon="@mipmap/ic_launcher">
         android:usesCleartextTraffic="true"
         <activity

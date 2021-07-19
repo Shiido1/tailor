@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jaynetwork/interceptor/retry/add_interceptor.dart';
 import 'package:jaynetwork/network/dio_client.dart';
-import 'package:tailor_app/utils/helper/pref_manage.dart';
+import 'package:sizary/utils/helper/pref_manage.dart';
 import 'package:toast/toast.dart';
 //
 final JayNetworkClient networkClient =

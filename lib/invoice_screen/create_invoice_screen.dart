@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/widget/purple_backgroud_widget.dart';
-import 'package:tailor_app/widget/text_field_editing_widget.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/widget/purple_backgroud_widget.dart';
+import 'package:sizary/widget/text_field_editing_widget.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 class InvoiceScreen extends StatefulWidget {
   const InvoiceScreen({Key key}) : super(key: key);

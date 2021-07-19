@@ -4,13 +4,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
 import 'package:provider/provider.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/otp/provider.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/utils/helper/constants.dart';
-import 'package:tailor_app/utils/helper/timer_helper.dart';
-import 'package:tailor_app/utils/page_route/navigator.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/otp/provider.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/utils/helper/constants.dart';
+import 'package:sizary/utils/helper/timer_helper.dart';
+import 'package:sizary/utils/page_route/navigator.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 import 'model.dart';
 

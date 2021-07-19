@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 // ignore: must_be_immutable
 class EditTextWidget extends StatelessWidget {

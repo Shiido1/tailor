@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:tailor_app/utils/colors.dart';
+import 'package:sizary/utils/colors.dart';
 
 bool _isShowing = false;
 String _dialogMessage = "Loading...";

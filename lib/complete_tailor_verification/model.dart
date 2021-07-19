@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:tailor_app/utils/helper/helper.dart';
+import 'package:sizary/utils/helper/helper.dart';
 
 class CompleteTailorModel {
   String message;
@@ -37,20 +37,19 @@ class CompleteTailorModel {
     MultipartFile multipartFile = new MultipartFile.fromBytes(
       imageData,
       filename: generateKey(15),
-      contentType: MediaType("image","jpg"),
+      contentType: MediaType("image", "jpg"),
     );
 
     FormData formData = FormData.fromMap({
-      'shopname':shopName,
-      'cac':cac,
-      'shopaddress':shopAddress,
-      'phone':phone,
-      'state':state,
-      'tags':tags,
-      'address':address,
-      'fabrics':fabrics,
-      'logo':multipartFile,
-
+      'shopname': shopName,
+      'cac': cac,
+      'shopaddress': shopAddress,
+      'phone': phone,
+      'state': state,
+      'tags': tags,
+      'address': address,
+      'fabrics': fabrics,
+      'logo': multipartFile,
     });
     return formData;
   }

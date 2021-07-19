@@ -2,11 +2,11 @@ import 'package:dio/dio.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:jaynetwork/network/network_exceptions.dart';
-import 'package:tailor_app/complete_tailor_verification/repo.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/utils/page_route/navigator.dart';
-import 'package:tailor_app/utils/page_route/route.dart';
-import 'package:tailor_app/widget/progress.dart';
+import 'package:sizary/complete_tailor_verification/repo.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/utils/page_route/navigator.dart';
+import 'package:sizary/utils/page_route/route.dart';
+import 'package:sizary/widget/progress.dart';
 
 CompleteTailorRepo _completeTailorRepo = CompleteTailorRepo();
 

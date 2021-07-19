@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:tailor_app/customers_management/customer/repo.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/widget/progress.dart';
+import 'package:sizary/customers_management/customer/repo.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/widget/progress.dart';
 
 import 'model.dart';
 

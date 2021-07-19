@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/widget/purple_backgroud_widget.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/widget/purple_backgroud_widget.dart';
+import 'package:sizary/widget/text_view_widget.dart';
+
+import '../coming_soon_client.dart';
 
 class ClientDashboard extends StatefulWidget {
   const ClientDashboard({Key key}) : super(key: key);
@@ -13,6 +16,21 @@ class ClientDashboard extends StatefulWidget {
 }
 
 class _ClientDashboardState extends State<ClientDashboard> {
+
+  String firstName, lastName;
+
+  @override
+  void initState() {
+    init();
+    super.initState();
+  }
+
+  init() async {
+    firstName = await preferencesHelper.getStringValues(key: 'firstname');
+    lastName = await preferencesHelper.getStringValues(key: 'lastname');
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +44,7 @@ class _ClientDashboardState extends State<ClientDashboard> {
                 Icon(Icons.account_circle,size: 70,),
                 SizedBox(width: 20,),
                 TextViewWidget(
-                    text: 'Princess Divine',
+                    text: '${firstName??''} ${lastName??''}',
                     color: AppColor.black,
                     textSize: 23,
                     fontWeight: FontWeight.w500),
@@ -142,7 +160,7 @@ class _ClientDashboardState extends State<ClientDashboard> {
                             text: 'Measurement',
                             color: Colors.amber,
                             svg: 'assets/measuring_tape.svg',
-                            screen: Scaffold()
+                            screen:ComingSoonClient()
                         ),
                       ],
                     ),
@@ -156,12 +174,12 @@ class _ClientDashboardState extends State<ClientDashboard> {
                             text: 'Invoice',
                             // color: Colors.amber,
                             svg: 'assets/new_invoice.svg',
-                            screen: Scaffold()
+                            screen: ComingSoonClient()
                         ),
                         itemContainer(
                             text: 'Progress Status',
                             svg: 'assets/progress.svg',
-                            screen: Scaffold()
+                            screen: ComingSoonClient()
                         )
                       ],
                     ),
@@ -174,12 +192,12 @@ class _ClientDashboardState extends State<ClientDashboard> {
                         itemContainer(
                             text: 'Payment Plan',
                             svg: 'assets/payment_plan.svg',
-                            screen: Scaffold()
+                            screen: ComingSoonClient()
                         ),
                         itemContainer(
                           text: 'Gallery',
                           svg: 'assets/gallery.svg',
-                          screen: Scaffold(),
+                          screen: ComingSoonClient(),
 
                         )
                       ],

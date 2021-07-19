@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jaynetwork/network/api_result.dart';
-import 'package:tailor_app/error_handler/handler.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
+import 'package:sizary/error_handler/handler.dart';
+import 'package:sizary/instance_helper/instances.dart';
 
 import 'model.dart';
 
@@ -15,6 +15,9 @@ class SignUpApiRepository {
       print('print:$_response');
       final _finalData = SignUpModel.fromJson(_response.data);
       preferencesHelper.saveValue(key: 'token', value: _finalData.user.accessToken);
+      preferencesHelper.saveValue(key: 'firstname', value: _finalData.firstName);
+      preferencesHelper.saveValue(key: 'lastname', value: _finalData.lastName);
+      preferencesHelper.saveValue(key: 'email', value: _finalData.email);
      return ApiResponse.success(
         statusMessage: _response.statusMessage,
         data: _finalData,

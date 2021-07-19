@@ -1,51 +1,66 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jaynetwork/network/network_exceptions.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/sign_in_screen/repo.dart';
-import 'package:tailor_app/utils/page_route/navigator.dart';
-import 'package:tailor_app/widget/progress.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/sign_in_screen/repo.dart';
+import 'package:sizary/utils/page_route/navigator.dart';
+import 'package:sizary/utils/page_route/route.dart';
+
+import 'model.dart';
 
 LoginApiRepository _loginRepository = LoginApiRepository();
 
 class SignInProvider extends ChangeNotifier {
   BuildContext _context;
-  String userToken;
-  String errorMsg='Login Failed';
-  CustomProgressIndicator _progressIndicator;
+  LoginModel loginModel;
+  bool isLoading = false;
 
   void initialize(BuildContext context) {
     this._context = context;
-    this._progressIndicator = CustomProgressIndicator(this._context);
   }
 
-  void loginUser({@required Map map}) async {
+  void loginUser({@required BuildContext context,@required Map map}) async {
     try {
-      _progressIndicator.show();
-      final _response = await _loginRepository.loginUser(map: map);
-      print('printing first response: $_response');
+      isLoading = true;
+      notifyListeners();
+      final _response = await _loginRepository.loginUser(context: context,map: map);
       _response.when(success: (success, _, statusMessage) async {
-        print('printing second response: $_response');
-        await _progressIndicator.dismiss();
         showToast(this._context, message: 'Login Successful.');
+        isLoading = false;
         String _prefType = await preferencesHelper.getStringValues(key: 'login_type');
-        print('printing account type here $_prefType');
         if(_prefType != null && _prefType == 'client')
           PageRouter.gotoNamed(Routes.CLIENT_DASHBOARD_SCREEN, _context);
         else
           PageRouter.gotoNamed(Routes.TAILOR_DASHBOARD_SCREEN, _context);
         notifyListeners();
-      }, failure: (NetworkExceptions error, int statusCode,
-          String statusMessage) async {
-        await _progressIndicator.dismiss();
-        print('printing response error: $_response');
-        showToast(
-            this._context, message: NetworkExceptions.getErrorMessage(error));
+      }, failure: (NetworkExceptions error, _, statusMessage) async {
+        showToast(this._context,
+            message: NetworkExceptions.getErrorMessage(error));
+        isLoading = false;
         notifyListeners();
       });
     } catch (e) {
-      await _progressIndicator.dismiss();
-      showToast(_context, message: errorMsg);
+      isLoading = false;
+      showToast(_context, message: e);
+      notifyListeners();
     }
+  }
+}
+
+class AuthenticationProfile with ChangeNotifier {
+  bool _isAuthentificated = false;
+
+  bool get isAuthentificated {
+    return this._isAuthentificated;
+  }
+
+  set isAuthentificated(bool newVal) {
+    this._isAuthentificated = newVal;
+    this.notifyListeners();
+  }
+
+  logout() {
+    isAuthentificated = false;
+    notifyListeners();
   }
 }
 

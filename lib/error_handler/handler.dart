@@ -1,6 +1,5 @@
 import 'package:jaynetwork/network/api_result.dart';
 import 'package:jaynetwork/network/network_exceptions.dart';
-import 'package:tailor_app/sign_in_screen/model.dart';
 
 import 'failed_model.dart';
 

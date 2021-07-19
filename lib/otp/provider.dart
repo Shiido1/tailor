@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jaynetwork/network/network_exceptions.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/otp/repo.dart';
-import 'package:tailor_app/utils/helper/timer_helper.dart';
-import 'package:tailor_app/utils/page_route/navigator.dart';
-import 'package:tailor_app/utils/page_route/route.dart';
-import 'package:tailor_app/widget/progress.dart';
-
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/otp/repo.dart';
+import 'package:sizary/utils/helper/timer_helper.dart';
+import 'package:sizary/utils/page_route/navigator.dart';
+import 'package:sizary/utils/page_route/route.dart';
+import 'package:sizary/widget/progress.dart';
 import 'model.dart';
 
 OtpApiRepository _repository = OtpApiRepository();

@@ -2,14 +2,14 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/utils/page_route/navigator.dart';
-import 'package:tailor_app/widget/text_field_editing_widget.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:tailor_app/tailor_category/upload_image/provider.dart';
-import 'package:tailor_app/tailor_category/upload_image/model.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/tailor_category/upload_image/model.dart';
+import 'package:sizary/tailor_category/upload_image/provider.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/utils/page_route/navigator.dart';
+import 'package:sizary/widget/text_field_editing_widget.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 import 'category_model/model.dart';
 import 'category_model/provider.dart';
@@ -296,7 +296,8 @@ class _TailorCategoryState extends State<TailorCategory> {
         leading: IconButton(
           color:AppColor.textColor,
           icon: Icon(Icons.storage),
-          onPressed: ()async=> await _showCategoryDialog(context),
+          onPressed: ()=>
+              PageRouter.gotoNamed(Routes.TAILOR_DASHBOARD_SCREEN, context),
       ),
       ),
       body: Padding(

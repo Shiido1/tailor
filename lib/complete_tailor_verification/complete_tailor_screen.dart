@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:tailor_app/complete_tailor_verification/provider.dart';
-import 'package:tailor_app/complete_tailor_verification/repo.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/widget/text_field_editing_widget.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/complete_tailor_verification/provider.dart';
+import 'package:sizary/complete_tailor_verification/repo.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/widget/text_field_editing_widget.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 import 'model.dart';
 

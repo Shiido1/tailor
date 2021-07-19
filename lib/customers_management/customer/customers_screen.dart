@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tailor_app/customers_management/customer/provider.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/customers_management/customer/provider.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/utils/page_route/navigator.dart';
+import 'package:sizary/utils/page_route/route.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 class CustomersScreen extends StatefulWidget {
   const CustomersScreen({Key key}) : super(key: key);
@@ -36,10 +38,11 @@ class _CustomersScreenState extends State<CustomersScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 2,
+
         leading: IconButton(
           color:AppColor.textColor,
-          icon: Icon(Icons.storage),
-          onPressed: (){},
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: ()=>PageRouter.gotoNamed(Routes.TAILOR_DASHBOARD_SCREEN, context),
         ),
       ),
       body: Padding(

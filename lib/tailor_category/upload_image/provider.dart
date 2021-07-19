@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:tailor_app/tailor_category/upload_image/repo.dart';
-import 'package:tailor_app/widget/progress.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:jaynetwork/network/network_exceptions.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
+import 'package:sizary/instance_helper/instances.dart';
+import 'package:sizary/tailor_category/upload_image/repo.dart';
+import 'package:sizary/widget/progress.dart';
 
 
 UploadImageRepo uploadImageRepo = UploadImageRepo();

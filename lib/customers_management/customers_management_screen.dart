@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/widget/text_field_editing_widget.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/utils/colors.dart';
+import 'package:sizary/widget/text_field_editing_widget.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 class CustomersManagement extends StatefulWidget {
   const CustomersManagement({Key key}) : super(key: key);

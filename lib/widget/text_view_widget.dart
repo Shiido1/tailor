@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tailor_app/utils/colors.dart';
+import 'package:sizary/utils/colors.dart';
 
 class TextViewWidget extends StatelessWidget {
   final String text;

@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jaynetwork/network/api_result.dart';
-import 'package:tailor_app/complete_tailor_verification/model.dart';
-import 'package:tailor_app/error_handler/handler.dart';
-import 'package:tailor_app/instance_helper/instances.dart';
 import 'package:dio/dio.dart';
+import 'package:sizary/error_handler/handler.dart';
+import 'package:sizary/instance_helper/instances.dart';
+
+import 'model.dart';
 
 class CompleteTailorRepo {
   Future<ApiResponse<dynamic>> completeTailorAccount(

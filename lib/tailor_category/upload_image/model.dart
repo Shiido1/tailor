@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:tailor_app/utils/helper/helper.dart';
+import 'package:sizary/utils/helper/helper.dart';
 
 class UploadImageModel {
   String message;

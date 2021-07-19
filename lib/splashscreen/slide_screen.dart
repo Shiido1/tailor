@@ -1,9 +1,7 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tailor_app/utils/colors.dart';
-import 'package:tailor_app/utils/page_route/navigator.dart';
-import 'package:tailor_app/widget/text_view_widget.dart';
+import 'package:sizary/utils/page_route/navigator.dart';
+import 'package:sizary/widget/text_view_widget.dart';
 
 class SlideScreen extends StatelessWidget {
   final String image;
@@ -12,17 +10,15 @@ class SlideScreen extends StatelessWidget {
   final String text2;
   final Color color;
   final Color textColor;
+  int currentIndexPage;
+  int pageLength;
 
   SlideScreen({
     @required this.image,
     @required this.svg,
     @required this.text1,
     @required this.text2,
-    @required this.color, this.textColor});
-
-  int currentIndexPage=0;
-  int pageLength=5;
-
+    @required this.color, this.textColor, this.currentIndexPage=0, this.pageLength=5});
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +26,12 @@ class SlideScreen extends StatelessWidget {
       body: Stack(
       children: [
         Container(
-          // height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           decoration: new BoxDecoration(
               image: new DecorationImage(
                 image: new AssetImage(image),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               )
           ),
         ),
@@ -49,17 +46,6 @@ class SlideScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(
-                  child: DotsIndicator(
-                    dotsCount: pageLength,
-                    position: double.parse(currentIndexPage.toString()),
-                    decorator: DotsDecorator(
-                        color: AppColor.white,
-                        activeColor: AppColor.purple,
-                        size: Size.square(8.0),
-                        activeSize: Size.square(8.0)),
-                  ),
-                ),
                 SizedBox(height: 20,),
                 TextViewWidget(
                   textAlign: TextAlign.center,
@@ -68,15 +54,17 @@ class SlideScreen extends StatelessWidget {
                   textSize: 30,
                   fontWeight: FontWeight.bold,),
                 SizedBox(height: 15,),
-                Padding(
-                  padding: const EdgeInsets.only(left:10.0,right: 25.0),
-                  child: TextViewWidget(
-                    textAlign: TextAlign.center,
-                    text: text2,
-                    color: textColor, textSize: 17,
-                    fontWeight: FontWeight.w200,),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left:10.0, right: 10.0),
+                    child: TextViewWidget(
+                      textAlign: TextAlign.center,
+                      text: text2,
+                      color: textColor, textSize: 14,
+                      fontWeight: FontWeight.w200,),
+                  ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 30,),
                 InkWell(
                   onTap: ()=>PageRouter.gotoNamed(Routes.LOGIN, context),
                     child: TextViewWidget(

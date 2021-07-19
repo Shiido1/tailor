@@ -2,29 +2,33 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'app_drawer.dart';
-
 // ignore: must_be_immutable
 class PurpleBackgroundWidget extends StatelessWidget {
-  PurpleBackgroundWidget({this.valueScaffold});
-  // var _scaffoldKey = GlobalKey<ScaffoldState>();
-   var valueScaffold;
+  PurpleBackgroundWidget({
+    this.valueScaffold,
+    this.onOptionTapped,
+  });
+  var valueScaffold;
+  final VoidCallback onOptionTapped;
 
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment:Alignment.topRight,
+      alignment: Alignment.topRight,
       child: Stack(
-          children: [
-        SvgPicture.asset('assets/rectangle.svg'),
-        Positioned(
-            top:10,
-            right:10,
-            bottom:25,
-            child: Builder(
-              builder: (context)=> InkWell(
-                onTap: ()=>valueScaffold,
-                  child: SvgPicture.asset('assets/menu.svg')),
-            ))]),);
+        children: [
+          SvgPicture.asset('assets/rectangle.svg'),
+          Positioned(
+            top: 10,
+            right: 10,
+            bottom: 25,
+            child: InkWell(
+              onTap: onOptionTapped,
+              child: SvgPicture.asset('assets/menu.svg'),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
