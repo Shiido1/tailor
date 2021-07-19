@@ -140,7 +140,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     text: 'Not a Member? -->',
                     color: AppColor.black,
                     fontWeight: FontWeight.w600,
-                    textSize: 22,),
+                    textSize: 22,)
                 ),
               )
             ]
