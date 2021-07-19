@@ -158,7 +158,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                         SizedBox(height: 35,),
 
-                        model.isLoading==true?
+                        model.isLoading?
                         SpinKitCircle(
                           itemBuilder: (BuildContext context, int index) {
                             return DecoratedBox(

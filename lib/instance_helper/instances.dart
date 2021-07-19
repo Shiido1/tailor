@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:jaynetwork/interceptor/retry/add_interceptor.dart';
 import 'package:jaynetwork/network/dio_client.dart';
 import 'package:sizary/utils/helper/pref_manage.dart';
 import 'package:toast/toast.dart';
 //
 final JayNetworkClient networkClient =
-JayNetworkClient('https://sizary.app/api/auth/',
-    interceptors: addPredefinedInterceptor());
+JayNetworkClient('https://sizary.app/api/auth/');
 
 final JayNetworkClient tailorNetworkClient =
-JayNetworkClient('https://sizary.app/api/tailor/',
-    interceptors: addPredefinedInterceptor());
+JayNetworkClient('https://sizary.app/api/tailor/');
 
 final SharedPreferencesHelper preferencesHelper = SharedPreferencesHelper();
 

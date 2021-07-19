@@ -291,7 +291,7 @@ class _CompleteTailorScreenState extends State<CompleteTailorScreen> {
 
   Future getImage(BuildContext context, bool isCamera) async {
     if (isCamera) {
-      var picture = await ImagePicker().getImage(source: ImageSource.camera);
+      var picture = await ImagePicker.pickImage(source: ImageSource.camera);
       if (picture != null && picture.path.isNotEmpty && picture.path != null) {
         setState(() {
           imageFile = File(picture.path);
@@ -299,7 +299,7 @@ class _CompleteTailorScreenState extends State<CompleteTailorScreen> {
         });
       }
     } else {
-      var picture = await ImagePicker().getImage(source: ImageSource.gallery);
+      var picture = await ImagePicker.pickImage(source: ImageSource.gallery);
       if (picture != null && picture.path.isNotEmpty && picture.path != null) {
         setState(() {
           imageFile = File(picture.path);
