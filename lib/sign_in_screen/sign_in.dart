@@ -135,6 +135,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           isValidationError: _isEmail,
                           textCallBack: (_) => setState(() => _isEmail = false),),
                         EditTextWidget(
+                          obsecure: true,
                           paddedSide: true,
                           color: AppColor.white,
                           err: 'please enter password',

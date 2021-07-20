@@ -14,6 +14,7 @@ class SignUpProviders extends ChangeNotifier {
   BuildContext _context;
   CustomProgressIndicator _progressIndicator;
   SignUpModel model;
+  String errorMsg = 'Sign Up failed, try again';
 
   void init(BuildContext context) {
     this._context = context;
@@ -33,9 +34,17 @@ class SignUpProviders extends ChangeNotifier {
         notifyListeners();
       }, failure: (NetworkExceptions error, int statusCode,
           String statusMessage) async {
-         await _progressIndicator.dismiss().then((value) => showToast(
-             this._context, message: NetworkExceptions.getErrorMessage(error)));
-        notifyListeners();
+         await _progressIndicator.dismiss();
+         if(error.toString()=='NetworkExceptions.noInternetConnection()'){
+           errorMsg = 'check internet connection and try again';
+           showToast(this._context, message: errorMsg);
+           notifyListeners();
+         }else{
+           showToast(this._context,
+               message: NetworkExceptions.getErrorMessage(error));
+           await _progressIndicator.dismiss();
+           notifyListeners();
+         }
       });
     } catch (e) {
       await _progressIndicator.dismiss().then((value) => showToast(

@@ -13,6 +13,7 @@ class SignInProvider extends ChangeNotifier {
   BuildContext _context;
   LoginModel loginModel;
   bool isLoading = false;
+  String errorMsg = 'Login Failed,try again';
 
   void initialize(BuildContext context) {
     this._context = context;
@@ -33,10 +34,21 @@ class SignInProvider extends ChangeNotifier {
           PageRouter.gotoNamed(Routes.TAILOR_DASHBOARD_SCREEN, _context);
         notifyListeners();
       }, failure: (NetworkExceptions error, _, statusMessage) async {
-        showToast(this._context,
-            message: NetworkExceptions.getErrorMessage(error));
         isLoading = false;
-        notifyListeners();
+        if(error.toString()=='NetworkExceptions.noInternetConnection()'){
+          errorMsg = 'check internet connection and try again';
+          showToast(this._context, message: errorMsg);
+          notifyListeners();
+        }else if(error.toString()=='NetworkExceptions.unauthorizedRequest()'){
+          errorMsg = 'check email and password and try again';
+          showToast(this._context, message: errorMsg);
+          notifyListeners();
+        }else{
+          showToast(this._context,
+              message: NetworkExceptions.getErrorMessage(error));
+          isLoading = false;
+          notifyListeners();
+        }
       });
     } catch (e) {
       isLoading = false;

@@ -15,6 +15,7 @@ class UploadImageProvider extends ChangeNotifier{
   BuildContext _context;
   CustomProgressIndicator _progressIndicator;
   String queryToken;
+  String errorMsg = 'Please try again';
 
   void init(BuildContext context) {
     this._context = context;
@@ -25,19 +26,24 @@ class UploadImageProvider extends ChangeNotifier{
 
     try{
       _progressIndicator.show();
-
       final _response = await uploadImageRepo.uploadImage(
           queryToken:token,imageData:imageData);
-
       _response.when(success: (success, data, __) async {
         await _progressIndicator.dismiss();
-        print('print me inside upload');
         showToast(this._context, message: success.message);
         notifyListeners();
       }, failure: (NetworkExceptions error, _, statusMessage) {
         _progressIndicator.dismiss();
-        showToast(this._context,
-            message: NetworkExceptions.getErrorMessage(error));
+        if(error.toString()=='NetworkExceptions.noInternetConnection()'){
+          errorMsg = 'check internet connection and try again';
+          showToast(this._context, message: errorMsg);
+          notifyListeners();
+        }else{
+          showToast(this._context,
+              message: NetworkExceptions.getErrorMessage(error));
+          _progressIndicator.dismiss();
+          notifyListeners();
+        }
       });
       notifyListeners();
     } catch (e) {
