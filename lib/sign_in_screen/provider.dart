@@ -59,7 +59,13 @@ class SignInProvider extends ChangeNotifier {
 }
 
 class AuthenticationProfile with ChangeNotifier {
-  bool _isAuthentificated = false;
+  bool _isAuthentificated;
+  BuildContext _context;
+
+  void initialize(BuildContext context) {
+    this._context = context;
+    _isAuthentificated = false;
+  }
 
   bool get isAuthentificated {
     return this._isAuthentificated;
@@ -70,9 +76,12 @@ class AuthenticationProfile with ChangeNotifier {
     this.notifyListeners();
   }
 
-  logout() {
-    isAuthentificated = false;
+  logout(bool authentificated) {
+    if(authentificated==true)
+      print('print logout again');
+      PageRouter.gotoNamed(Routes.LOGIN, _context);
+    }
     notifyListeners();
   }
-}
+
 

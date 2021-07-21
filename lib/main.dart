@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:sizary/sign_in_screen/provider.dart';
+import 'package:sizary/sign_in_screen/sign_in.dart';
 import 'package:sizary/splashscreen/splashscreen.dart';
 import 'package:sizary/utils/colors.dart';
 import 'package:sizary/utils/helper/pref_manage.dart';
@@ -48,10 +49,12 @@ class _WrapperState extends State<Wrapper> {
   AuthenticationProfile profile;
   String prefType;
 
+
   @override
   void initState() {
     preferencesHelper = SharedPreferencesHelper();
     profile = Provider.of<AuthenticationProfile>(context, listen: false);
+    profile.initialize(context);
     getEmail();
     super.initState();
   }
@@ -76,8 +79,8 @@ class _WrapperState extends State<Wrapper> {
           );
         },
       );
-    if (email == "" && profile.isAuthentificated == false) return SplashScreen();
-    else if(email != "" && profile.isAuthentificated != false && prefType == 'client')
+    if (email == "" ) return SplashScreen();
+    else if(email != "" &&  prefType == 'client')
       return ClientDashboard();
     return TailorDashBoard();
   }

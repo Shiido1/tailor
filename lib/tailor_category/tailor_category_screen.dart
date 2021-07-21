@@ -295,10 +295,9 @@ class _TailorCategoryState extends State<TailorCategory> {
         elevation: 2,
         leading: IconButton(
           color:AppColor.textColor,
-          icon: Icon(Icons.storage),
-          onPressed: ()=>
-              PageRouter.gotoNamed(Routes.TAILOR_DASHBOARD_SCREEN, context),
-      ),
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: ()=>PageRouter.gotoNamed(Routes.TAILOR_DASHBOARD_SCREEN, context),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left:8.0,right:8.0),

@@ -23,7 +23,6 @@ void tailorCategoryP({@required String token}) async {
     _progressIndicator.show();
     categoryModel = await tailorCategory.tailorCategoryRepo(queryToken: token);
     await _progressIndicator.dismiss();
-    // showToast(this._context, message: 'Successfully added a Category');
     notifyListeners();
   } catch (e) {
     await _progressIndicator.dismiss();

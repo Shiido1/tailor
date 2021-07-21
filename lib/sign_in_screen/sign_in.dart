@@ -90,12 +90,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   decoration: new BoxDecoration(
                     color: AppColor.black,
                     image: new DecorationImage(
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                       colorFilter: new ColorFilter.mode(
                           AppColor.white.withOpacity(0.7), BlendMode.dstATop),
-                      image: new AssetImage(
-                        'assets/male_tailor.jpg',
-                      ),
+                      image: new AssetImage('assets/tailoring-process.jpg'),
                     ),
                   ),
                   child: Padding(
