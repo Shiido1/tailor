@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
               color: AppColor.purple,),
             SlideScreen(
               textColor: AppColor.white,
-              image: 'assets/image2.png',
+              image: 'assets/portrait-tailor-holding-coffee.jpg',
               text1: 'Design Sharing',
               text2: 'Share your gallery with your tailor and invite to make the design\n of your choice.',
               svg: 'assets/rectangle1.svg',
