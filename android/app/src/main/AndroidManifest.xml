@@ -1,12 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tailor_app">
+    package="sizary.com">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
    <application
         android:label="Sizary"
         android:icon="@mipmap/ic_launcher">
-        android:usesCleartextTraffic="true"
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
